@@ -1,0 +1,6 @@
+---
+# tasks file for rewrite_bash_profile
+
+- include: rewrite_bash_profile.yml
+  tags:
+    - rewrite_bash_profile

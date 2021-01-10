@@ -1,0 +1,6 @@
+---
+# tasks file for configure_limits
+
+- include: configure_limits.yml
+  tags:
+    - configure_limits

@@ -1,0 +1,6 @@
+---
+# vars file for create_dirs
+
+# - include: create_directories_vars.yml
+  # tags:
+  #   - create_directories_vars

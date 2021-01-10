@@ -1,0 +1,9 @@
+---
+
+- name: install requirements 
+  become: yes
+  become_user: root
+  yum: 
+     name: ['bash', 'curl', 'rpm', 'tar', 'bc', 'zip', 'unzip', 'telnet', 'nfs-utils', 'wget', 'bind-utils'] 
+     state: present
+     lock_timeout: 180 

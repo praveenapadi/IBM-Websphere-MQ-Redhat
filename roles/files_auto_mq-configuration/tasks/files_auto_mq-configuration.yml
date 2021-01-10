@@ -1,0 +1,196 @@
+---
+
+#######
+# Scripts files
+
+# chmod 775 /usr/local/bin/configure-bus
+- name: Copy files script auto mq-configuration, configure-bus to /usr/local/bin
+  become: true
+  become_user: root
+  copy:
+    src: "{{ dir_mq_scripts }}/scripts/configure-bus"
+    dest: "{{ usr_bin }}/configure-bus"
+    mode: '0775'
+    remote_src: yes
+
+# chmod 775 /usr/local/bin/check-iib-health-aws
+- name: Copy files script auto mq-configuration, check-iib-health-aws to /usr/local/bin
+  become: true
+  become_user: root
+  copy:
+    src: "{{ dir_mq_scripts }}/scripts/check-iib-health-aws"
+    dest: "{{ usr_bin }}/check-iib-health-aws"
+    mode: '0775'
+    remote_src: yes
+
+# chmod 775 /usr/local/bin/configure-mq
+- name: Copy files script auto mq-configuration, configure-mq to /usr/local/bin
+  become: true
+  become_user: root
+  copy:
+    src: "{{ dir_mq_scripts }}/scripts/configure-mq"
+    dest: "{{ usr_bin }}/configure-mq"
+    mode: '0775'
+    remote_src: yes
+
+# chmod 775 /usr/local/bin/run-iib-cmd
+- name: Copy files script auto mq-configuration, run-iib-cmd to /usr/local/bin
+  become: true
+  become_user: root
+  copy:
+    src: "{{ dir_mq_scripts }}/scripts/run-iib-cmd"
+    dest: "{{ usr_bin }}/run-iib-cmd"
+    mode: '0775'
+    remote_src: yes
+
+# chmod 775 /usr/local/bin/starter-registry.xml
+- name: Copy files script auto mq-configuration, starter-registry.xml to /usr/local/bin
+  become: true
+  become_user: root
+  copy:
+    src: "{{ dir_mq_scripts }}/scripts/starter-registry.xml"
+    dest: "{{ usr_bin }}/starter-registry.xml"
+    mode: '0775'
+    remote_src: yes
+
+# chmod 775 /usr/local/bin/configure-mq-console
+- name: Copy files script auto mq-configuration, configure-mq-console to /usr/local/bin
+  become: true
+  become_user: root
+  copy:
+    src: "{{ dir_mq_scripts }}/scripts/configure-mq-console"
+    dest: "{{ usr_bin }}/configure-mq-console"
+    mode: '0775'
+    remote_src: yes
+
+# chmod 775 /usr/local/bin/check-port-health-helper
+- name: Copy files script auto mq-configuration, check-port-health-helper to /usr/local/bin
+  become: true
+  become_user: root
+  copy:
+    src: "{{ dir_mq_scripts }}/scripts/check-port-health-helper"
+    dest: "{{ usr_bin }}/check-port-health-helper"
+    mode: '0775'
+    remote_src: yes
+
+# chmod 775 /usr/local/bin/check-mq-health-aws
+- name: Copy files script auto mq-configuration, check-mq-health-aws to /usr/local/bin
+  become: true
+  become_user: root
+  copy:
+    src: "{{ dir_mq_scripts }}/scripts/check-mq-health-aws"
+    dest: "{{ usr_bin }}/check-mq-health-aws"
+    mode: '0775'
+    remote_src: yes
+
+# chmod 775 /usr/local/bin/configmqadmperm
+- name: Copy files script auto mq-configuration, configmqadmperm to /usr/local/bin
+  become: true
+  become_user: root
+  copy:
+    src: "{{ dir_mq_scripts }}/scripts/configmqadmperm"
+    dest: "{{ usr_bin }}/configmqadmperm"
+    mode: '0775'
+    remote_src: yes
+
+# chmod 775 /usr/local/bin/configmqmonperm
+- name: Copy files script auto mq-configuration, configmqmonperm to /usr/local/bin
+  become: true
+  become_user: root
+  copy:
+    src: "{{ dir_mq_scripts }}/scripts/configmqmonperm"
+    dest: "{{ usr_bin }}/configmqadmperm"
+    mode: '0775'
+    remote_src: yes
+
+# chmod 775 /usr/local/bin/configmqoperperm
+- name: Copy files script auto mq-configuration, configmqoperperm to /usr/local/bin
+  become: true
+  become_user: root
+  copy:
+    src: "{{ dir_mq_scripts }}/scripts/configmqoperperm"
+    dest: "{{ usr_bin }}/configmqoperperm"
+    mode: '0775'
+    remote_src: yes
+
+
+
+#######
+# Services files
+
+- name: Copy files services auto mq-configuration, iib-health-aws@.service to /etc/systemd/system/
+  become: true
+  become_user: root
+  copy:
+    src: "{{ dir_mq_services }}/services/iib-health-aws@.service"
+    dest: "{{ system_loc }}/iib-health-aws@.service"
+    mode: '0775'
+    remote_src: yes
+
+- name: Copy files services auto mq-configuration, iib-start-broker@.service to /etc/systemd/system/
+  become: true
+  become_user: root
+  copy:
+    src: "{{ dir_mq_services }}/services/iib-start-broker@.service"
+    dest: "{{ system_loc }}/iib-start-broker@.service"
+    mode: '0775'
+    remote_src: yes
+
+- name: Copy files services auto mq-configuration, mq-console-setup.service to /etc/systemd/system/
+  become: true
+  become_user: root
+  copy:
+    src: "{{ dir_mq_services }}/services/mq-console-setup.service"
+    dest: "{{ system_loc }}/mq-console-setup.service"
+    mode: '0775'
+    remote_src: yes
+
+- name: Copy files services auto mq-configuration, mq-console.service to /etc/systemd/system/
+  become: true
+  become_user: root
+  copy:
+    src: "{{ dir_mq_services }}/services/mq-console.service"
+    dest: "{{ system_loc }}/mq-console.service"
+    mode: '0775'
+    remote_src: yes
+
+- name: Copy files services auto mq-configuration, mq-health-aws@.service to /etc/systemd/system/
+  become: true
+  become_user: root
+  copy:
+    src: "{{ dir_mq_services }}/services/mq-health-aws@.service"
+    dest: "{{ system_loc }}/mq-health-aws@.service"
+    mode: '0775'
+    remote_src: yes
+
+- name: Copy files services auto mq-configuration, mq@.service to /etc/systemd/system/
+  become: true
+  become_user: root
+  copy:
+    src: "{{ dir_mq_services }}/services/mq@.service"
+    dest: "{{ system_loc }}/mq@.service"
+    mode: '0775'
+    remote_src: yes
+
+- name: Copy files services auto mq-configuration, port-health-aws.service to /etc/systemd/system/
+  become: true
+  become_user: root
+  copy:
+    src: "{{ dir_mq_services }}/services/port-health-aws.service"
+    dest: "{{ system_loc }}/port-health-aws.service"
+    mode: '0775'
+    remote_src: yes
+
+
+
+
+
+
+
+
+
+
+
+
+
+

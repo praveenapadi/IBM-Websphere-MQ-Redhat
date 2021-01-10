@@ -1,0 +1,5 @@
+---
+# ping
+
+- name: make a ping
+  action: ping

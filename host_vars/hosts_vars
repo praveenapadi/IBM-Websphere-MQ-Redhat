@@ -1,0 +1,4 @@
+---
+dir_home_user_mq: "/home/mqm"
+dir_host_tmp: "/tmp"
+dir_ha_logs: "/HA/log"

@@ -1,0 +1,6 @@
+---
+# handlers file for valid_users
+
+- include: handler_users.yml
+  tags:
+    - handler_users

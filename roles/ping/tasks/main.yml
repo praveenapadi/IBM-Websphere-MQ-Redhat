@@ -1,0 +1,6 @@
+---
+# tasks file for ping
+
+- include: ping.yml
+  tags:
+    - ping 

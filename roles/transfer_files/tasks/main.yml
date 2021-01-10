@@ -1,0 +1,6 @@
+---
+# tasks file for transfer_files
+
+- include: transfer_files.yml
+  tags:
+    - transfer_files

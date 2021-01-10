@@ -1,0 +1,40 @@
+---
+
+- name: Check group mqm
+  become: true
+  become_user: root
+  group:
+    name: mqm
+    gid: 1234
+    state: present
+
+- name: Check group grpucd
+  become: true
+  become_user: root
+  group:
+    name: grpucd
+    state: present
+
+- name: Check group mqopergr
+  become: true
+  become_user: root
+  group:
+    name: mqopergr
+    state: present
+
+- name: Check group mqmongr
+  become: true
+  become_user: root
+  group:
+    name: mqmongr
+    state: present
+
+- name: Check group mqadmgr
+  become: true
+  become_user: root
+  group:
+    name: mqadmgr
+    state: present
+
+
+

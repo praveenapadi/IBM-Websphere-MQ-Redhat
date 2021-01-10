@@ -1,0 +1,61 @@
+---
+
+- name: Backup limits.conf to limits.conf_bk
+  become: true
+  become_user: root
+  copy:
+    src: "{{  limitsconf }}"
+    dest: "{{  limitsconf }}_bk"
+    owner: mqm
+    group: mqm
+    mode: '0740'
+    remote_src: yes
+
+
+- name: Configure file limits for the mqm user, mqm hard nofile 10240
+  become: true
+  become_user: root
+  lineinfile:
+    path: "{{  limitsconf }}"
+    # The String to Search
+    regexp: "mqm hard nofile 10240" 
+    # The String to Replace
+    line: "mqm hard nofile 10240"
+    state: present
+    backup: yes
+
+- name: Configure file limits for the mqm user, mqm soft nofile 10240
+  become: true
+  become_user: root
+  lineinfile:
+    path: "{{  limitsconf }}"
+    # The String to Search
+    regexp: "mqm soft nofile 10240" 
+    # The String to Replace
+    line: "mqm soft nofile 10240"
+    state: present
+    backup: yes
+
+- name: Configure file limits for the mqm user, mqm hard nproc 20480
+  become: true
+  become_user: root
+  lineinfile:
+    path: "{{  limitsconf }}"
+    # The String to Search
+    regexp: "mqm hard nproc 20480" 
+    # The String to Replace
+    line: "mqm hard nproc 20480"
+    state: present
+    backup: yes
+
+- name: Configure file limits for the mqm user, mqm soft nproc 20480
+  become: true
+  become_user: root
+  lineinfile:
+    path: "{{  limitsconf }}"
+    # The String to Search
+    regexp: "mqm soft nproc 20480" 
+    # The String to Replace
+    line: "mqm soft nproc 20480"
+    state: present
+    backup: yes

@@ -1,0 +1,7 @@
+---
+
+- name: Accept license MQSeries
+  become: yes
+  become_user: root
+  shell:
+    cd "{{ dir_mq_medios }}/MQServer" && ./mqlicense.sh -text_only -accept

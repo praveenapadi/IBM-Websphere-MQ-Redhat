@@ -1,0 +1,33 @@
+---
+
+- name: Unarchive file MQ.tar.gz that is already on the remote machine
+  become: yes
+  become_user: root
+  unarchive:
+    src: "{{ binaries_location }}"
+    dest: "{{ dir_mq_medios }}"
+    remote_src: yes
+
+- name: Unarchive file mqmhome.zip that is already on the remote machine
+  become: yes
+  become_user: root
+  unarchive:
+    src: "{{ mqmhome_zip }}"
+    dest: "{{ dir_mq_mqmhome }}"
+    remote_src: yes
+
+- name: Unarchive file scripts.zip that is already on the remote machine
+  become: yes
+  become_user: root
+  unarchive:
+    src: "{{ scripts_zip }}"
+    dest: "{{ dir_mq_scripts }}"
+    remote_src: yes
+
+- name: Unarchive file services.zip that is already on the remote machine
+  become: yes
+  become_user: root
+  unarchive:
+    src: "{{ services_zip }}"
+    dest: "{{ dir_mq_services }}"
+    remote_src: yes

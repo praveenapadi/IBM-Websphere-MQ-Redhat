@@ -1,0 +1,7 @@
+---
+# tasks file for delete_files
+
+- include: delete_files.yml
+  tags:
+    - delete_files
+

@@ -1,0 +1,6 @@
+---
+# tasks file for set_mq_installation
+
+- include: set_mq_installation.yml
+  tags:
+    - set_mq_installation

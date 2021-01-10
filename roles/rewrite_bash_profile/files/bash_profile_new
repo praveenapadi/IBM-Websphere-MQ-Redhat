@@ -1,0 +1,18 @@
+# .bash_profile #new
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+	. ~/.bashrc
+fi
+
+# User specific environment and startup programs
+
+PATH=$PATH:$HOME/.local/bin:$HOME/bin
+echo $PATH | grep ~/bin
+export PATH=~/bin:$PATH
+. mqprofile
+
+PATH=$PATH:$MQ_JRE_PATH/bin
+export PATH
+
+JAVA_HOME=$MQ_JRE_PATH
+export JAVA_HOME

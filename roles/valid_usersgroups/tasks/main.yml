@@ -1,0 +1,6 @@
+---
+# tasks file for valid_usersgroups
+
+- include: groups.yml
+  tags:
+    - groups

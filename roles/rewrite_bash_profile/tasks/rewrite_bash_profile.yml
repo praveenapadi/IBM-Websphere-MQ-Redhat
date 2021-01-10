@@ -1,0 +1,33 @@
+---
+
+- name: Backup .bash_profile
+  become: true
+  become_user: root
+  copy:
+    src: "{{ dir_home_user_mq }}/.profile"
+    dest: "{{ dir_home_user_mq }}/.profile_bk_bk"
+    owner: mqm
+    group: mqm
+    mode: '0740'
+    remote_src: yes
+
+- name: Create new file .bash_profile_new in {{ dir_home_user_mq }}
+  become: true
+  become_user: root
+  copy:
+    src: files/bash_profile_new
+    dest: "{{ dir_home_user_mq }}/.bash_profile_new"
+    owner: mqm
+    group: mqm
+    mode: '0740'
+
+- name: Rewrite .bash_profile in {{ dir_home_user_mq }}
+  become: true
+  become_user: root
+  copy:
+    src: "{{ dir_home_user_mq }}/.bash_profile_new"
+    dest: "{{ dir_home_user_mq }}/.profile"
+    owner: mqm
+    group: mqm
+    mode: '0740'
+    remote_src: yes

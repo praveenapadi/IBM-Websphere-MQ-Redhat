@@ -1,0 +1,37 @@
+---
+
+- name: "Create user mqm"
+  become: yes
+  become_user: root
+  shell:
+    useradd --uid 1234 --gid mqm --home-dir /home/mqm mqm
+
+- name: Create user mqoper
+  become: yes
+  become_user: root
+  shell:
+    useradd -g mqopergr -m mqoper
+
+- name: Create user mqmon
+  become: yes
+  become_user: root
+  shell:
+    useradd -g mqmongr -m mqmon
+
+- name: Create user mqadm
+  become: yes
+  become_user: root
+  shell:
+    useradd -g mqadmgr -m mqadm
+
+- name: Create user ucdagent
+  become: yes
+  become_user: root
+  shell:
+    useradd -g grpucd -m ucdagent 
+
+- name: Create usermod root
+  become: yes
+  become_user: root
+  shell:
+    usermod -G mqm root

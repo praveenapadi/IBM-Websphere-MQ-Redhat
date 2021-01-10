@@ -1,0 +1,31 @@
+---
+
+- name: Create group mqm
+  become: true
+  become_user: root
+  shell:
+    groupadd --gid 1234 mqm
+
+- name: Create group grpucd
+  become: yes
+  become_user: root
+  shell:
+    groupadd grpucd
+
+- name: Create group mqopergr
+  become: yes
+  become_user: root
+  shell:
+    groupadd mqopergr
+
+- name: Create group mqmongr
+  become: yes
+  become_user: root
+  shell:
+    groupadd mqmongr
+
+- name: Create group mqadmgr
+  become: yes
+  become_user: root
+  shell:
+    groupadd mqadmgr 

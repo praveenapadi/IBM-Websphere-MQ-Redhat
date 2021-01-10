@@ -1,0 +1,59 @@
+---
+
+- name: "Check user mqm"
+  become: yes
+  become_user: root
+#  vars:
+#    dir_home_user_mq: "/home/mqm" 
+  user:
+    name: mqm
+    state: present
+    groups: "mqm"
+    uid: 1234
+    home: "{{ dir_home_user_mq }}" 
+
+
+- name: "Check user mqoper"
+  become: yes
+  become_user: root
+  user:
+    name: mqoper
+    state: present
+    groups: "mqopergr"
+
+
+- name: "Check user mqmon"
+  become: yes
+  become_user: root
+  user:
+    name: mqmon
+    state: present
+    groups: "mqmongr"
+
+  
+- name: "Check user mqadm"
+  become: yes
+  become_user: root
+  user:
+    name: mqadm
+    state: present
+    groups: "mqadmgr"
+
+
+- name: "Check user ucdagent"
+  become: yes
+  become_user: root
+  user:
+    name: ucdagent
+    state: present
+    groups: "grpucd"
+
+
+- name: "Check usermod root to mqm"
+  become: yes
+  become_user: root
+  user:
+    name: root
+    state: present
+    groups: "mqm"
+

@@ -1,0 +1,41 @@
+---
+
+- name: Copy file MQ.tar.gz
+  become: yes
+  become_user: root
+  copy:
+    src: "~/mq-redhat/{{ binary_name }}"
+    dest: "{{ binaries_location }}"
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Copy file mqmhome.zip
+  become: yes
+  become_user: root
+  copy:
+    src: ~/mq-redhat/mqmhome.zip
+    dest: "{{ mqmhome_zip }}"
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Copy file scripts.zip
+  become: yes
+  become_user: root
+  copy:
+    src: ~/mq-redhat/scripts.zip
+    dest: "{{ scripts_zip }}"
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Copy file services.zip
+  become: yes
+  become_user: root
+  copy:
+    src: ~/mq-redhat/services.zip
+    dest: "{{ services_zip }}"
+    owner: root
+    group: root
+    mode: '0644'

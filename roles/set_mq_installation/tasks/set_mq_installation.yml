@@ -1,0 +1,13 @@
+---
+
+# Recommended: Set the default MQ installation (makes the MQ commands available on the PATH)
+- name: Set the default MQ installation (makes the MQ commands available on the PATH)
+  become: true
+  become_user: root
+  shell:
+    "{{ opt_bin }}/setmqinst -p {{ opt_loc }} -i"
+  register: setmqinstall
+
+- name: set MQ installation failed
+  when: setmqinstall is failed
+  debug: msg="The command *- {{ opt_bin }}/setmqinst -p {{ opt_loc }} -i -* have fail"

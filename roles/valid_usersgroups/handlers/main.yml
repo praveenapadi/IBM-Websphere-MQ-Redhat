@@ -1,0 +1,6 @@
+---
+# handlers file for valid_usersgroups
+
+- include: handler_groups.yml
+  tags:
+    - handler_groups

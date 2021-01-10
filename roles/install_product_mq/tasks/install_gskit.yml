@@ -1,0 +1,151 @@
+---
+- name: install GSKit
+  become: yes
+  become_user: root
+  yum:
+    name: "{{ dir_mq_mqserver }}/MQSeriesGSKit-9.1.0-0.x86_64.rpm"
+    state: present
+
+- name: install JRE
+  become: yes
+  become_user: root
+  yum:
+    name: "{{ dir_mq_mqserver }}/MQSeriesJRE-9.1.0-0.x86_64.rpm"
+    state: present
+
+- name: install Java
+  become: yes
+  become_user: root
+  yum:
+    name: "{{ dir_mq_mqserver }}/MQSeriesJava-9.1.0-0.x86_64.rpm"
+    state: present
+    
+- name: install MQSeriesServer
+  become: yes
+  become_user: root
+  yum:
+    name: "{{ dir_mq_mqserver }}/MQSeriesServer-9.1.0-0.x86_64.rpm"
+    state: present
+    
+- name: install MQSeriesWeb
+  become: yes
+  become_user: root
+  yum:
+    name: "{{ dir_mq_mqserver }}/MQSeriesWeb-9.1.0-0.x86_64.rpm"
+    state: present
+    
+- name: install MQSeriesFTBase
+  become: yes
+  become_user: root
+  yum:
+    name: "{{ dir_mq_mqserver }}/MQSeriesFTBase-9.1.0-0.x86_64.rpm"
+    state: present
+
+- name: install MQSeriesFTAgent
+  become: yes
+  become_user: root
+  yum:
+    name: "{{ dir_mq_mqserver }}/MQSeriesFTAgent-9.1.0-0.x86_64.rpm"
+    state: present
+    
+- name: install MQSeriesFTService
+  become: yes
+  become_user: root
+  yum:
+    name: "{{ dir_mq_mqserver }}/MQSeriesFTService-9.1.0-0.x86_64.rpm"
+    state: present
+
+- name: install MQSeriesFTLogger
+  become: yes
+  become_user: root
+  yum:
+    name: "{{ dir_mq_mqserver }}/MQSeriesFTLogger-9.1.0-0.x86_64.rpm"
+    state: present
+
+- name: install MQSeriesFTTools
+  become: yes
+  become_user: root
+  yum:
+    name: "{{ dir_mq_mqserver }}/MQSeriesFTTools-9.1.0-0.x86_64.rpm"
+    state: present
+
+- name: install MQSeriesAMQP
+  become: yes
+  become_user: root
+  yum:
+    name: "{{ dir_mq_mqserver }}/MQSeriesAMQP-9.1.0-0.x86_64.rpm"
+    state: present
+
+- name: install MQSeriesAMS
+  become: yes
+  become_user: root
+  yum:
+    name: "{{ dir_mq_mqserver }}/MQSeriesAMS-9.1.0-0.x86_64.rpm"
+    state: present
+
+- name: install MQSeriesXRService
+  become: yes
+  become_user: root
+  yum:
+    name: "{{ dir_mq_mqserver }}/MQSeriesXRService-9.1.0-0.x86_64.rpm"
+    state: present
+
+- name: install MQSeriesExplorer
+  become: yes
+  become_user: root
+  yum:
+    name: "{{ dir_mq_mqserver }}/MQSeriesExplorer-9.1.0-0.x86_64.rpm"
+    state: present
+    
+- name: install MQSeriesClient
+  become: yes
+  become_user: root
+  yum:
+    name: "{{ dir_mq_mqserver }}/MQSeriesClient-9.1.0-0.x86_64.rpm"
+    state: present
+
+- name: install MQSeriesMan
+  become: yes
+  become_user: root
+  yum:
+    name: "{{ dir_mq_mqserver }}/MQSeriesMan-9.1.0-0.x86_64.rpm"
+    state: present
+
+- name: install MQSeriesMsg
+  become: yes
+  become_user: root
+  yum:
+    name: ['{{ dir_mq_mqserver }}/MQSeriesMsg_cs-9.1.0-0.x86_64.rpm', '{{ dir_mq_mqserver }}/MQSeriesMsg_de-9.1.0-0.x86_64.rpm', '{{ dir_mq_mqserver }}/MQSeriesMsg_es-9.1.0-0.x86_64.rpm', '{{ dir_mq_mqserver }}/MQSeriesMsg_fr-9.1.0-0.x86_64.rpm', '{{ dir_mq_mqserver }}/MQSeriesMsg_hu-9.1.0-0.x86_64.rpm', '{{ dir_mq_mqserver }}/MQSeriesMsg_it-9.1.0-0.x86_64.rpm', '{{ dir_mq_mqserver }}/MQSeriesMsg_ja-9.1.0-0.x86_64.rpm', '{{ dir_mq_mqserver }}/MQSeriesMsg_ko-9.1.0-0.x86_64.rpm', '{{ dir_mq_mqserver }}/MQSeriesMsg_pl-9.1.0-0.x86_64.rpm', '{{ dir_mq_mqserver }}/MQSeriesMsg_pt-9.1.0-0.x86_64.rpm', '{{ dir_mq_mqserver }}/MQSeriesMsg_ru-9.1.0-0.x86_64.rpm', '{{ dir_mq_mqserver }}/MQSeriesMsg_Zh_CN-9.1.0-0.x86_64.rpm', '{{ dir_mq_mqserver }}/MQSeriesMsg_Zh_TW-9.1.0-0.x86_64.rpm'] 
+    state: present
+
+- name: install MQSeriesSamples
+  become: yes
+  become_user: root
+  yum:
+    name: "{{ dir_mq_mqserver }}/MQSeriesSamples-9.1.0-0.x86_64.rpm"
+    state: present
+
+- name: install MQSeriesSDK
+  become: yes
+  become_user: root
+  yum:
+    name: "{{ dir_mq_mqserver }}/MQSeriesSDK-9.1.0-0.x86_64.rpm"
+    state: present
+
+- name: install MQSeriesSFBridge
+  become: yes
+  become_user: root
+  yum:
+    name: "{{ dir_mq_mqserver }}/MQSeriesSFBridge-9.1.0-0.x86_64.rpm"
+    state: present
+
+- name: install MQSeriesBCBridge
+  become: yes
+  become_user: root
+  yum:
+    name: "{{ dir_mq_mqserver }}/MQSeriesBCBridge-9.1.0-0.x86_64.rpm"
+    state: present
+
+     
+
+

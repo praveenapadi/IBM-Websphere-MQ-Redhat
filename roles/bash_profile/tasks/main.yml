@@ -1,0 +1,6 @@
+---
+# tasks file for bash_profile
+
+- include: bash_profile.yml
+  tags:
+    - bash_profile

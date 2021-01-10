@@ -1,0 +1,114 @@
+---
+
+- name: Backup sysctl.conf to sysctl.conf_bk
+  become: true
+  become_user: root
+  copy:
+    src: "{{  sysctlconf }}"
+    dest: "{{ sysctlconf }}_bk"
+    owner: mqm
+    group: mqm
+    mode: '0740'
+    remote_src: yes
+
+- name: Configure kernel parameters to values suitable for running MQ, kernel.msgmni = 1024
+  become: true
+  become_user: root
+  lineinfile:
+    path: "{{  sysctlconf }}"
+    # The String to Search
+    regexp: "kernel.msgmni = 1024" 
+    # The String to Replace
+    line: "kernel.msgmni = 1024"
+    state: present
+    backup: yes
+
+- name: Configure kernel parameters to values suitable for running MQ, kernel.shmmni = 4096
+  become: true
+  become_user: root
+  lineinfile:
+    path: "{{  sysctlconf }}"
+    # The String to Search
+    regexp: "kernel.shmmni = 4096" 
+    # The String to Replace
+    line: "kernel.shmmni = 4096"
+    state: present
+    backup: yes
+
+- name: Configure kernel parameters to values suitable for running MQ, kernel.shmall = 2097152
+  become: true
+  become_user: root
+  lineinfile:
+    path: "{{  sysctlconf }}"
+    # The String to Search
+    regexp: "kernel.shmall = 2097152" 
+    # The String to Replace
+    line: "kernel.shmall = 2097152"
+    state: present
+    backup: yes
+
+- name: Configure kernel parameters to values suitable for running MQ, kernel.sem = 500 256000 250 1024
+  become: true
+  become_user: root
+  lineinfile:
+    path: "{{  sysctlconf }}"
+    # The String to Search
+    regexp: "kernel.sem = 500 256000 250 1024" 
+    # The String to Replace
+    line: "kernel.sem = 500 256000 250 1024"
+    state: present
+    backup: yes
+
+- name: Configure kernel parameters to values suitable for running MQ, kernel.pid_max = 120000
+  become: true
+  become_user: root
+  lineinfile:
+    path: "{{  sysctlconf }}"
+    # The String to Search
+    regexp: "kernel.pid_max = 120000" 
+    # The String to Replace
+    line: "kernel.pid_max = 120000"
+    state: present
+    backup: yes
+
+- name: Configure kernel parameters to values suitable for running MQ, kernel.threads-max = 48000
+  become: true
+  become_user: root
+  lineinfile:
+    path: "{{  sysctlconf }}"
+    # The String to Search
+    regexp: "kernel.threads-max = 48000" 
+    # The String to Replace
+    line: "kernel.threads-max = 48000"
+    state: present
+    backup: yes
+
+- name: Configure kernel parameters to values suitable for running MQ, fs.file-max = 524288
+  become: true
+  become_user: root
+  lineinfile:
+    path: "{{  sysctlconf }}"
+    # The String to Search
+    regexp: "fs.file-max = 524288" 
+    # The String to Replace
+    line: "fs.file-max = 524288"
+    state: present
+    backup: yes
+
+- name: Configure kernel parameters to values suitable for running MQ, net.ipv4.tcp_keepalive_time = 300
+  become: true
+  become_user: root
+  lineinfile:
+    path: "{{  sysctlconf }}"
+    # The String to Search
+    regexp: "net.ipv4.tcp_keepalive_time = 300" 
+    # The String to Replace
+    line: "net.ipv4.tcp_keepalive_time = 300"
+    state: present
+    backup: yes
+
+
+
+
+
+

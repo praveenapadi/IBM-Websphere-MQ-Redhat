@@ -1,0 +1,6 @@
+---
+# tasks file for extract_files
+
+- include: extract_files.yml
+  tags:
+    - extract_files

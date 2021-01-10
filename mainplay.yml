@@ -1,0 +1,26 @@
+---
+- hosts: mqlab 
+  ignore_errors: yes
+  vars_files:
+    - host_vars/hosts_vars
+    - group_vars/locals_vars.yml
+  roles:
+    - ping 
+    - valid_packages
+    - valid_usersgroups
+    - valid_users 
+    - create_dirs
+    - transfer_files
+    - extract_files
+    - accept_license
+    - install_mqserver_runtime
+    - install_product_mq
+    - bash_profile
+    - files_auto_mq-configuration
+    - configure_limits
+    - configure_kernel
+    - set_mq_installation
+    - delete_files
+    - rewrite_bash_profile
+
+  

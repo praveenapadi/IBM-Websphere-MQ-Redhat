@@ -1,0 +1,6 @@
+---
+# tasks file for accept_license
+
+- include: accept_license.yml
+  tags:
+    - accept_license

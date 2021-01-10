@@ -1,0 +1,6 @@
+---
+# tasks file for configure_kernel
+
+- include: configure_kernel.yml
+  tags:
+    - configure_kernel

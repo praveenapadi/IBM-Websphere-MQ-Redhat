@@ -1,0 +1,6 @@
+---
+# tasks file for script_auto_mq-configuration
+
+- include: files_auto_mq-configuration.yml
+  tags:
+    - files_auto_mq-configuration

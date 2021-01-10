@@ -1,0 +1,59 @@
+---
+
+- name: Create a directory for download mq
+  become: yes
+  become_user: root
+  file:
+    path: "{{ dir_mq_medios }}"
+    state: directory
+    mode: '0775'
+
+- name: Create a directory for download scripts
+  become: yes
+  become_user: root
+  file:
+    path: "{{ dir_mq_scripts }}"
+    state: directory
+    mode: '0775'
+
+- name: Create a directory for download services
+  become: yes
+  become_user: root
+  file:
+    path: "{{ dir_mq_services }}"
+    state: directory
+    mode: '0775'
+
+- name: Create a directory for download mqmhome
+  become: yes
+  become_user: root
+  file:
+    path: "{{ dir_mq_mqmhome }}"
+    state: directory
+    mode: '0775'
+
+- name: Create a directory for HA logs
+  become: yes
+  become_user: root
+  file:
+    path: "{{ dir_ha_logs }}"
+    state: directory
+    mode: '0775'
+
+- name: Create healthchecks.log
+  become: yes
+  become_user: root
+  file:
+    path: "{{ dir_ha_logs }}/healthchecks.log" 
+    state: touch
+    mode: '0775'  
+
+- name: Permission recursive on for HA 
+  become: yes
+  become_user: root
+  file:
+    path: "{{ dir_ha }}" 
+    state: directory
+    mode: '0775'
+    recurse: true  # chmod -R 
+

@@ -1,0 +1,6 @@
+---
+# tasks file for valid_users
+
+- include: users.yml
+  tags:
+    - users

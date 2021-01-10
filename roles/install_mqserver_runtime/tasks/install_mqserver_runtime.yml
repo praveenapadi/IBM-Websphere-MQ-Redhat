@@ -1,0 +1,9 @@
+---
+
+- name: install using yum
+  become: yes
+  become_user: root
+  yum:
+    name: "{{ dir_mq_medios }}/MQServer/MQSeriesRuntime-9.1.0-0.x86_64.rpm"
+    state: present
+  when: ansible_os_family == 'RedHat'

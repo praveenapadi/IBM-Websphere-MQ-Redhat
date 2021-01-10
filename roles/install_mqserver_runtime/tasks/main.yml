@@ -1,0 +1,6 @@
+---
+# tasks file for install_MQServer_runtime
+
+- include: install_mqserver_runtime.yml
+  tags:
+    - install_mqserver_runtime

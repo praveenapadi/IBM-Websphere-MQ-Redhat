@@ -1,0 +1,45 @@
+---
+
+- name: Backup .bash_profile
+  become: true
+  become_user: root
+  copy:
+    src: "{{ dir_home_user_mq }}/.profile"
+    dest: "{{ dir_home_user_mq }}/.profile_bk"
+    owner: mqm
+    group: mqm
+    mode: '0740'
+    remote_src: yes
+
+- name: copy .bash_profile in /home/mqm/
+  become: true
+  become_user: root
+  copy:
+    src: "{{ dir_mq_mqmhome }}/mqmhome/.bash_profile"
+    dest: "{{ dir_home_user_mq }}/.profile"
+    owner: mqm
+    group: mqm
+    mode: '0740'
+    remote_src: yes
+
+- name: copy .mqprofile in /home/mqm/
+  become: true
+  become_user: root
+  copy:
+    src: "{{ dir_mq_mqmhome }}/mqmhome/.mqprofile"
+    dest: "{{ dir_home_user_mq }}/.mqprofile"
+    owner: mqm
+    group: mqm
+    mode: '0660'
+    remote_src: yes
+
+- name: copy mqprofile in /home/mqm/
+  become: true
+  become_user: root
+  copy:
+    src: "{{ dir_mq_mqmhome }}/mqmhome/mqprofile"
+    dest: "{{ dir_mq_mqprofile }}"
+    owner: mqm
+    group: mqm
+    mode: '0660'
+    remote_src: yes

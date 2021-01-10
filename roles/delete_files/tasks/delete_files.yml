@@ -1,0 +1,76 @@
+---
+
+- name: Recursively remove IBM_MQ_*.tar.gz
+  become: true
+  become_user: root
+  file:
+    path: "{{ binaries_location }}"
+    state: absent
+    remote_src: yes
+
+- name: Recursively remove mqmhome.zip
+  become: true
+  become_user: root
+  file:
+    path: "{{ mqmhome_zip }}"
+    state: absent
+    remote_src: yes
+
+- name: Recursively remove scripts.zip
+  become: true
+  become_user: root
+  file:
+    path: "{{ scripts_zip }}"
+    state: absent
+    remote_src: yes
+
+- name: Recursively remove services.zip
+  become: true
+  become_user: root
+  file:
+    path: "{{ services_zip }}"
+    state: absent
+    remote_src: yes
+
+################
+
+- name: Recursively remove directory mq
+  become: true
+  become_user: root
+  file:
+    path: "{{ dir_mq_medios }}"
+    state: absent
+    remote_src: yes
+
+- name: Recursively remove directory mqmhome
+  become: true
+  become_user: root
+  file:
+    path: "{{ dir_mq_mqmhome }}"
+    state: absent
+    remote_src: yes
+
+- name: Recursively remove directory scripts
+  become: true
+  become_user: root
+  file:
+    path: "{{ dir_mq_scripts }}"
+    state: absent
+    remote_src: yes
+
+- name: Recursively remove directory services
+  become: true
+  become_user: root
+  file:
+    path: "{{ dir_mq_services }}"
+    state: absent
+    remote_src: yes
+
+
+
+
+
+
+
+
+
